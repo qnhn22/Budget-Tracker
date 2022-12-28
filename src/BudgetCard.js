@@ -5,17 +5,17 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import { Stack, Button } from 'react-bootstrap';
 
 function BudgetCard({ name, amount, availability }) {
-    const classNames = ""
+    let className = ""
     if (amount > availability) {
-        classNames = "bg-danget"
+        className = "bg-danger bg-opacity-10"
     } else {
-        classNames.push("bg-light")
+        className = "bg-light"
     }
     console.log(amount)
     console.log(availability)
 
     return (
-        <Card className="bg-danger">
+        <Card className={className}>
             <Card.Body >
                 <Card.Title className='d-flex justify-content-between align-items-baseline fw-normal mb-3'>
                     <div className='me-2'>{name}</div>

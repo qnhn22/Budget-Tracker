@@ -1,6 +1,4 @@
 import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
 import { Stack, Button } from 'react-bootstrap';
 import BudgetCard from './BudgetCard';
 
@@ -15,7 +13,7 @@ function App() {
       <Container fluid>
         <BudgetCard name={"Housing"} amount={2500} availability={2000} />
         <BudgetCard name={"Food"} amount={800} availability={1200} />
-        <BudgetCard />
+        <BudgetCard name={"Entertainment"} amount={500} availability={1000} />
         <BudgetCard />
       </Container>
     </Container>
