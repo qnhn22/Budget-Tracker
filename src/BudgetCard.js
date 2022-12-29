@@ -26,7 +26,6 @@ function BudgetCard({ name, amount, availability }) {
                 <Stack direction='horizontal' gap="2" className='mt-4'>
                     <Button size="sm" variant="outline-primary" className='ms-auto'>Add Expense</Button>
                     <Button size="sm" variant="outline-secondary">View Expense</Button>
-                    <Button size="sm" variant="outline-success">Remove Expense</Button>
                 </Stack>
             </Card.Body>
         </Card>
