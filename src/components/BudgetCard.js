@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
-import { currencyFormatter } from './utils';
+import { currencyFormatter } from '../utils';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { Stack, Button } from 'react-bootstrap';
 
