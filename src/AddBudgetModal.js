@@ -1,8 +1,11 @@
-import React from 'react'
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 function AddBudgetModal() {
     return (
-        <div>AddBudgetModal</div>
+        <Modal>
+            <Form></Form>
+        </Modal>
     )
 }
 
