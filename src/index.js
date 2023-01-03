@@ -13,4 +13,4 @@ root.render(
   </React.StrictMode>
 );
 
-// everything in the BudgetContext is going to be available in our app.
+// Note on context: everything in the BudgetContext is going to be available in our app.
