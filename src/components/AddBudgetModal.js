@@ -3,6 +3,10 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 function AddBudgetModal({ show, handleClose }) {
+    function handleSubmit(e) {
+
+    }
+
     return (
         <Modal show={show} onHide={handleClose}>
             <Form onSubmit={handleSubmit}>

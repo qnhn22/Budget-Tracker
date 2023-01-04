@@ -20,7 +20,7 @@ function App() {
         </Container>
 
       </Container>
-      <AddBudgetModal />
+      <AddBudgetModal show={true} />
     </>
   )
 }
