@@ -9,7 +9,7 @@ function App() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false)
   const { budgets } = useBudgets()
 
-  const showAddBudget = () => {
+  const closeAddBudget = () => {
     setShowAddBudgetModal(false)
   }
 
@@ -31,11 +31,10 @@ function App() {
           <BudgetCard name={"Housing"} amount={2500} availability={2000} />
           <BudgetCard name={"Food"} amount={800} availability={1200} />
           <BudgetCard name={"Entertainment"} amount={500} availability={1000} />
-          <BudgetCard />
         </Container>
 
       </Container>
-      <AddBudgetModal show={showAddBudgetModal} handleClose={showAddBudget} />
+      <AddBudgetModal show={showAddBudgetModal} handleClose={closeAddBudget} />
     </>
   )
 }
