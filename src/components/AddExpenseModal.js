@@ -37,7 +37,15 @@ function AddExpenseModal({ show, handleClose, defaultBudgetId }) {
                     </Form.Group>
                     <Form.Group className='mb-3' controlId='budgetId'>
                         <Form.Label>Budget</Form.Label>
-                        <Form.Select ref={amountRef} type='number' required min={0} step={0.1} />
+                        <Form.Select ref={budgetIdRef} defaultValue={defaultBudgetId}>
+                            {budgets.map(budget => {
+                                return (
+                                    <option key={budget.id} value={budget.id}>
+                                        {budget.name}
+                                    </option>
+                                )
+                            })}
+                        </Form.Select>
                     </Form.Group>
                     <div className='d-flex justify-content-end'>
                         <Button type='submit' color='primary'>Add</Button>
@@ -48,4 +56,4 @@ function AddExpenseModal({ show, handleClose, defaultBudgetId }) {
     )
 }
 
-export default AddBudgetModala
+export default AddExpenseModal
