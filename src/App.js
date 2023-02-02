@@ -7,7 +7,7 @@ import { useBudgets } from "./contexts/BudgetsContext.js"
 
 function App() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false)
-  const { budgets } = useBudgets()
+  const { budgets, getBudgetExpenses } = useBudgets()
 
   const closeAddBudget = () => {
     setShowAddBudgetModal(false)
@@ -22,12 +22,22 @@ function App() {
           <Button variant='secondary'>Add Expense</Button>
         </Stack>
         <Container fluid>
-          {/* {budgets.map(budget => (
-            <BudgetCard
-              key={budget.id}
-              name={budget.name}
-              amount={budget.}
-          ))} */}
+          {budgets.map(budget => {
+            const amount = getBudgetExpenses(budget.id).reduce(
+              (total, expense) => total + expense.amount,
+              0
+            )
+
+            return (
+              <BudgetCard
+                key={budget.id}
+                name={budget.name}
+                amount={amount}
+                max={budget.max}
+              />
+            )
+          })}
+
           <BudgetCard name={"Housing"} amount={2500} availability={2000} />
           <BudgetCard name={"Food"} amount={800} availability={1200} />
           <BudgetCard name={"Entertainment"} amount={500} availability={1000} />
