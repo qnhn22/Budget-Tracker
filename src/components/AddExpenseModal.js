@@ -2,7 +2,7 @@ import { Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import { useRef } from 'react';
-import { useBudgets } from '../contexts/BudgetsContext';
+import { UNCATEGORIZED_BUDGET_ID, useBudgets } from '../contexts/BudgetsContext';
 
 function AddExpenseModal({ show, handleClose, defaultBudgetId }) {
     const descriptionRef = useRef()
@@ -38,6 +38,7 @@ function AddExpenseModal({ show, handleClose, defaultBudgetId }) {
                     <Form.Group className='mb-3' controlId='budgetId'>
                         <Form.Label>Budget</Form.Label>
                         <Form.Select ref={budgetIdRef} defaultValue={defaultBudgetId}>
+                            <option id={UNCATEGORIZED_BUDGET_ID}>Uncategorized</option>
                             {budgets.map(budget => {
                                 return (
                                     <option key={budget.id} value={budget.id}>
@@ -48,7 +49,7 @@ function AddExpenseModal({ show, handleClose, defaultBudgetId }) {
                         </Form.Select>
                     </Form.Group>
                     <div className='d-flex justify-content-end'>
-                        <Button type='submit' color='primary'>Add</Button>
+                        <Button type='submit' variant='secondary'>Add</Button>
                     </div>
                 </Modal.Body>
             </Form>
