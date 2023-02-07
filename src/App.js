@@ -14,9 +14,16 @@ function App() {
     setShowAddBudgetModal(false)
   }
 
+  const [addExpenseModalBudgetId, setAddExpenseModalBudgetId] = useState()
+
   const [showAddExpenseModal, setShowAddExpenseModal] = useState(false)
   const closeAddExpense = () => {
     setShowAddExpenseModal(false)
+  }
+
+  function openAddExpenseModal(budgetId) {
+    setShowAddExpenseModal(true)
+    setAddExpenseModalBudgetId(budgetId)
   }
 
   return (
