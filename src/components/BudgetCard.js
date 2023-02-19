@@ -4,7 +4,7 @@ import { currencyFormatter } from '../utils';
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import { Stack, Button } from 'react-bootstrap';
 
-function BudgetCard({ name, amount, availability }) {
+function BudgetCard({ name, amount, availability, onAddExpenseClick }) {
     const classNames = []
     if (amount > availability) {
         classNames.push("bg-danger", "bg-opacity-10")
@@ -13,7 +13,7 @@ function BudgetCard({ name, amount, availability }) {
     }
 
     return (
-        <Card className={`${classNames.join(" ")} mb-5`}>
+        <Card className={`${classNames.join(" ")} mb-4`}>
             <Card.Body >
                 <Card.Title className='d-flex justify-content-between align-items-baseline fw-normal mb-3'>
                     <div className='me-2'>{name}</div>
@@ -24,7 +24,8 @@ function BudgetCard({ name, amount, availability }) {
                 <ProgressBar className='rounded-pill' variant={getProBarVar(amount, availability)}
                     min={0} max={availability} now={amount}></ProgressBar>
                 <Stack direction='horizontal' gap="2" className='mt-4'>
-                    <Button size="sm" variant="outline-primary" className='ms-auto'>Add Expense</Button>
+                    <Button size="sm" variant="outline-primary" className='ms-auto'
+                        onClick={onAddExpenseClick}>Add Expense</Button>
                     <Button size="sm" variant="outline-secondary">View Expense</Button>
                 </Stack>
             </Card.Body>
